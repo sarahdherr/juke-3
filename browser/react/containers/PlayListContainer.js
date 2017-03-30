@@ -16,7 +16,7 @@ export default class PlayListContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.checkLength = this.checkLength.bind(this);
-    this.createNewPlayList = this.createNewPlayList.bind(this);
+    
   }
 
   checkLength() {
@@ -37,16 +37,16 @@ export default class PlayListContainer extends Component {
     //console.log("playlist submitted", this.state.playListName)
     this.setState({ inputValue: "" })
     e.preventDefault();
-    this.createNewPlayList()
+    this.props.createNewPlayList(this.state.playListName)
   }
 
-  createNewPlayList() {
-    axios.post('/api/playlists', {name: this.state.playListName})
-      .then(res => res.data)
-      .then(result => {
-        console.log(result) // response json from the server!
-      });
-  }
+  // createNewPlayList() {
+  //   axios.post('/api/playlists', {name: this.state.playListName})
+  //     .then(res => res.data)
+  //     .then(result => {
+  //       console.log(result) // response json from the server!
+  //     });
+  // }
 
   render() {
     const playListName = this.state.playListName;

@@ -58,3 +58,7 @@ footer {
 
 .album img {
   height: 300px; }
+
+.playlist-sidebar {
+  padding-left: 1em;
+}
