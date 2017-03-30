@@ -15,13 +15,15 @@ export default class FilterableArtistsContainer extends Component {
 	}
 
 	handleChange(e) {
-		this.setState({inputValue: e.target.value});
+		console.log("INPUT", e.target.value);
+		this.setState({inputValue: e.target.value.toLowerCase()});
 	}
 
 	render() {
 		const inputValue = this.state.inputValue;
-		const filteredArtists = this.props.artists.filter(artist =>
-			artist.name.match(inputValue));
+		const filteredArtists = this.props.artists.filter(artist => 
+			artist.name.toLowerCase().match(inputValue));
+
 
 		return (
 			<div>
