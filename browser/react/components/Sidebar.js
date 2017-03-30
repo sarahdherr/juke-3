@@ -25,7 +25,7 @@ const Sidebar = (props) => {
         <ul className="list-unstyled playlist-sidebar">
           {props.playlists.map(playlist => 
              <li key={playlist.id} className="playlist-item menu-item">
-              <Link to="">{playlist.name}</Link>
+              <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>
             </li>
           )}
         </ul>

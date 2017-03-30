@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import axios from 'axios';
 import NewPlayList from '../components/NewPlayList';
+import Playlist from '../components/Playlist';
 
 export default class PlayListContainer extends Component {
   constructor(props) {
@@ -40,22 +41,19 @@ export default class PlayListContainer extends Component {
     this.props.createNewPlayList(this.state.playListName)
   }
 
-  // createNewPlayList() {
-  //   axios.post('/api/playlists', {name: this.state.playListName})
-  //     .then(res => res.data)
-  //     .then(result => {
-  //       console.log(result) // response json from the server!
-  //     });
-  // }
-
   render() {
     const playListName = this.state.playListName;
 
 
     return (
       <div>
-
-        <NewPlayList handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputValue={this.state.inputValue} validLength={this.state.validLength} startedTyping={this.state.startedTyping} />
+        <NewPlayList 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit} 
+          inputValue={this.state.inputValue} 
+          validLength={this.state.validLength} 
+          startedTyping={this.state.startedTyping} 
+        />        
       </div>
     )
   }
